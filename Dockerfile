@@ -1,6 +1,6 @@
 FROM alpine
 
-ARG	webmin_version=1.860
+ARG	webmin_version=1.881
 
 RUN 	apk update && \
 	apk add --no-cache ca-certificates openssl perl perl-net-ssleay expect && \
@@ -11,7 +11,7 @@ RUN 	apk update && \
 
 WORKDIR	/opt/webmin
 
-COPY	conf/setup.exp setup.exp
+COPY	setup.exp setup.exp
 
 RUN 	/usr/bin/expect ./setup.exp && \
 	rm setup.exp && \
