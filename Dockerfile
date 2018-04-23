@@ -13,11 +13,11 @@ WORKDIR	/opt/webmin
 
 COPY	setup.exp setup.exp
 
-# RUN 	/usr/bin/expect ./setup.exp && \
-# 	rm setup.exp && \
-# 	apk del expect
+RUN 	/usr/bin/expect ./setup.exp && \
+	rm setup.exp && \
+	apk del expect
 
-# VOLUME	["/etc/webmin" , "/var/webmin"]
+VOLUME	["/etc/webmin" , "/var/webmin"]
 
-# CMD ["/etc/webmin/start", "--nofork"]
+CMD ["/etc/webmin/start", "--nofork"]
 	
