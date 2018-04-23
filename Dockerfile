@@ -18,5 +18,8 @@ RUN 	/usr/bin/expect ./setup.exp && \
 	apk del expect
 
 VOLUME	["/etc/webmin" , "/var/webmin"]
+VOLUME	["/etc/bind"   , "/var/bind"]
 
-CMD 	["/etc/webmin/start", "--nofork"]
+COPY run.sh /opt/run.sh
+RUN chmod +x /opt/run.sh
+CMD ["/opt/run.sh"]
