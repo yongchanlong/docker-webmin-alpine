@@ -1,6 +1,6 @@
 FROM alpine
 
-ARG	webmin_version=1.880
+ARG	webmin_version=1.881
 
 RUN 	apk update && \
 	apk add --no-cache ca-certificates openssl perl perl-net-ssleay expect && \
