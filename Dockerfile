@@ -17,8 +17,7 @@ RUN 	/usr/bin/expect ./setup.exp && \
 	rm setup.exp && \
 	apk del expect
 
-VOLUME	["/etc/webmin" , "/var/webmin"]
-VOLUME	["/etc/bind"   , "/var/bind"]
+VOLUME	["/etc/webmin" , "/var/webmin" ,"/etc/bind"]
 
 COPY run.sh /opt/run.sh
 RUN chmod +x /opt/run.sh
