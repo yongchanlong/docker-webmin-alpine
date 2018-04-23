@@ -3,7 +3,7 @@ FROM 	alpine
 ARG	webmin_version=1.881
 
 RUN 	apk update && \
-	apk add --no-cache ca-certificates openssl perl perl-net-ssleay expect && \
+	apk add --no-cache expect bind && \
 	mkdir /opt && \
 	cd /opt && \
 	wget -q -O - "https://prdownloads.sourceforge.net/webadmin/webmin-$webmin_version.tar.gz" | tar xz && \
@@ -20,4 +20,3 @@ RUN 	/usr/bin/expect ./setup.exp && \
 VOLUME	["/etc/webmin" , "/var/webmin"]
 
 CMD 	["/etc/webmin/start", "--nofork"]
-	
