@@ -19,5 +19,5 @@ RUN 	/usr/bin/expect ./setup.exp && \
 
 VOLUME	["/etc/webmin" , "/var/webmin"]
 
-CMD ["/etc/webmin/start", "--nofork"]
+CMD 	["/etc/webmin/start", "--nofork"]
 	
