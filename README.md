@@ -1,14 +1,13 @@
-Simple Webmin
+Name: Webmin
+Package: webmin, bind
+command :
 
-Usage :
+docker run -d --name webmin -p 53:53 -p 53:53/udp -p 10000:10000 andrewai/docker-webmin-alpine
 
-docker run -d --name webmin -p 10000:10000 andrewai/docker-webmin-alpine
-
-Two volumes are mounted :
-
+3 volumes are mounted :
 /etc/webmin
+/etc/bind
 /var/webmin
+
 Default admin user : admin
 Default password : admin
-
-That's All...
