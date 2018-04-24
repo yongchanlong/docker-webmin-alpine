@@ -18,6 +18,10 @@ RUN 	/usr/bin/expect ./setup.exp && \
 	rm setup.exp && \
 	apk del expect
 
+RUN	cp /usr/sbin/named /etc/webmin && \
+	sed -i 's/named_path=\/usr\/sbin\/named/named_path=\/etc\/webmin\/named/' /etc/webmin/bind8/config && \
+	sed -i 's/named_conf=\/etc\/named.conf/named_conf=\/etc\/webmin\/named.conf/' /etc/webmin/bind8/config
+	
 VOLUME	["/etc/webmin" , "/var/webmin" ,"/etc/bind"]
 
 COPY run.sh /opt/run.sh
