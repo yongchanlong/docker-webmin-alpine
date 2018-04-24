@@ -3,7 +3,8 @@ FROM 	alpine
 ARG	webmin_version=1.881
 
 RUN 	apk update && \
-	apk add --no-cache ca-certificates openssl perl perl-net-ssleay expect bind && \
+	apk add --no-cache ca-certificates openssl perl perl-net-ssleay expect bind tzdata && \
+	cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
 	mkdir /opt && \
 	cd /opt && \
 	wget -q -O - "https://prdownloads.sourceforge.net/webadmin/webmin-$webmin_version.tar.gz" | tar xz && \
