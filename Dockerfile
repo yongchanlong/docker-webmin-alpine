@@ -24,6 +24,10 @@ RUN	cp /usr/sbin/named /etc/webmin && \
 	
 VOLUME	["/etc/webmin" , "/var/webmin" ,"/etc/bind"]
 
-COPY run.sh /opt/run.sh
-RUN chmod +x /opt/run.sh
-CMD ["/opt/run.sh"]
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+# COPY run.sh /opt/run.sh
+# RUN chmod +x /opt/run.sh
+# CMD ["/opt/run.sh"]
