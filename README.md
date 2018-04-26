@@ -1,6 +1,6 @@
 Name: Webmin
 Package: webmin, bind
-command :
+command : 
 
 docker run -d --name webmin -p 53:53 -p 53:53/udp -p 10000:10000 andrewai/docker-webmin-alpine
 
